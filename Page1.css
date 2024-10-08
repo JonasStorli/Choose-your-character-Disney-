@@ -1,5 +1,8 @@
 .bg-images {
+    outline: 2px solid black;
+
     padding: 20em;
     background-image: url("")
+    
 
 }
