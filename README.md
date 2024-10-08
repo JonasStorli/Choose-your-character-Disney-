@@ -1,3 +1,0 @@
-# Choose-your-character-Disney-
-
-Choose your Character (Disney). 2 side: Pil/knapp til høyre og venstre hvor det bytter til nye Disney karakterer. Med god swipe animation enten høyre eller venstre spørs hvilke pil man velger å trkke på, god tekst med enkel animasjon, god og fin bakgrunn med animasjoner. 1 side: enkel bakgrunn med bilde av de forskjellige karakterene og en knapp som fører oss til neste side.
