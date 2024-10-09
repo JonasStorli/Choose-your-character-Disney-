@@ -13,10 +13,12 @@ h1 {
 }
 
 .container {
+    background-color: #000;
     position: relative; /* Set position to relative for absolute positioning of button */
     border: 10px solid rgb(0, 0, 0); /* Border around the container */
-    width: 1024px; /* Updated width */
-    height: 768px; /* Fixed height */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+    width: 1024px;
+    height: 768px; 
     display: flex;
     justify-content: center;
     align-items: center;
