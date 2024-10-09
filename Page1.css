@@ -1,51 +1,36 @@
 body {
     margin: 0;
-    position: relative;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    border: solid black 10px;
-    width: 1024px;
-    height: 100vh;
-    left: 50%;
-    transform: translateX(-50%);
-    justify-items: center;
-}
-
-.png {
-    width: 100px;
-}
-
-.png:hover {
-    
+    height: 100vh; /* Full height of the viewport */
 }
 
 .container {
     position: relative;
     display: flex;
-    border: solid black 10px;
-    width: 1024px;
-    height: 768px;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow: hidden; /* Ensures images fit within the container */
+    border: solid black 10px; /* Border around the container */
+    width: 1024px; /* Fixed width */
+    height: 768px; /* Fixed height */
+    left: 50%; /* Center the container */
+    transform: translateX(-50%); /* Adjust for centering */
+    overflow: hidden; /* Hide overflow from images */
 }
 
-.bg-images {
+.grid {
     display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     width: 100%;
-    height: 100%;
+    height: 100%
 }
 
 img {
-        width: 100%;
-        height: 100%; /* Maintain aspect ratio */
-        object-fit: cover; /* Cover the area without distortion */
-}
-
-
-.button {
-
+    width: 100%; /* Fill the grid cell's width */
+    height: 100%; /* Fill the grid cell's height */
+    object-fit: cover; /* Maintain aspect ratio, cover the area */
 }
