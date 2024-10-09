@@ -1,0 +1,75 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #333;
+  }
+  
+  /* Container for the whole character selection */
+  .character-selection-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+  }
+  
+  /* Character display area */
+  .character-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Styling for all character images */
+  .character {
+    margin: 0 15px;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Make the middle character larger */
+  .character.active {
+    transform: scale(1.2);
+  }
+  
+  /* Make the left and right characters slightly smaller */
+  .small-left, .small-right {
+    transform: scale(0.9);
+    opacity: 0.8; /* Optional: Make them slightly transparent */
+  }
+  
+  /* Arrow button styling */
+  .arrow {
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .arrow:hover {
+    background-color: #555;
+  }
+  
+  /* Positioning arrows next to the characters */
+  .left-arrow {
+    position: absolute;
+    left: -50px;
+  }
+  
+  .right-arrow {
+    position: absolute;
+    right: -50px;
+  }
+  
