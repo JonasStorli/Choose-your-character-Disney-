@@ -1,37 +1,36 @@
 body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.container {
     position: relative;
-    display:flex;
-    border: solid black 10px;
-    width: 1024px;
-    height: 768px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    border: solid black 10px; /* Border around the container */
+    width: 1024px; /* Fixed width */
+    height: 768px; /* Fixed height */
+    left: 50%; /* Center the container */
+    transform: translateX(-50%); /* Adjust for centering */
+    overflow: hidden; /* Hide overflow from images */
 }
 
-.png {
-    width: 100px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    height: 100%
 }
 
-.png:hover {
-    
-}
-
-.bg-images {
-    padding: 2em;
-    background-image: 
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url("");
-    background-repeat: no-repeat;
-    background-position: top left, top right;
-}
-
-.button {
-
+img {
+    width: 100%; /* Fill the grid cell's width */
+    height: 100%; /* Fill the grid cell's height */
+    object-fit: cover; /* Maintain aspect ratio, cover the area */
 }
