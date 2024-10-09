@@ -70,3 +70,7 @@ img {
 .button:hover {
     background-color: #45a049; /* Darker green on hover */
 }
+
+.center-button-container .button:not(:hover):not(:hover){
+    filter: grayscale(1) blur(10px);
+}
