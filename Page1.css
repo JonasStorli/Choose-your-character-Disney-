@@ -9,15 +9,15 @@ body {
 .container {
     position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
     border: solid black 10px; /* Border around the container */
-    width: 1064px; /* Adjusted width */
-    height: 768px; /* Adjusted height */
-    left: 50%; /* Center the container */
-    transform: translateX(-50%); /* Adjust for centering */
+    width: 1064px; /* Fixed width */
+    height: 768px; /* Fixed height */
     overflow: hidden; /* Hide overflow from images */
 }
 
-.bg-images {
+.grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
