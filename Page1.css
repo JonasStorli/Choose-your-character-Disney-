@@ -123,11 +123,3 @@ img {
     color: #000;
     font-weight: bold;
 }
-
-.center-button-container .button:not(:hover):not(:hover){
-    filter: grayscale(1) blur(10px);
-}
-
-.button .grid:not(:hover):not(:hover){
-    filter: grayscale(1) blur(10px);
-}
