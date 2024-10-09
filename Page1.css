@@ -28,7 +28,6 @@ body {
 img {
     width: 100%; /* Fill the grid cell's width */
     height: 100%; /* Fill the grid cell's height */
-<<<<<<< HEAD
     object-fit: cover; /* Maintain aspect ratio, cover the area */
 }
 
@@ -60,8 +59,7 @@ img {
     width: 100vw; /* Full viewport width */
   }
   
-=======
     object-fit: cover; /* Cover the area while maintaining aspect ratio */
     border: 2px solid white; /* Optional: Add a border around images */
 }
->>>>>>> ccf65d8086612e8b8e6b6edb428207cebf6492c3
+
