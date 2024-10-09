@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disney Character</title>
-    <link rel="stylesheet" href="Page2.html">
-    <h1>Kys</h1>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Selection</title>
+  <link rel="stylesheet" href="Page2.html"> <!-- Link to your CSS file -->
 </head>
 <body>
 
+  <h1 class="heading">Character Selection</h1>
+
+  <div class="character-selection-container">
+    
+    <!-- Left arrow button to navigate -->
+    <button class="arrow left-arrow" id="left-arrow">&#9664;</button>
+    
+    <!-- Characters displayed -->
+    <div class="character-display">
+      <img src="donald.png" class="character small-left" alt="Character 1">
+      <img src="hulk.png" class="character active" alt="Character 2"> <!-- Middle character is active -->
+      <img src="hercules.png" class="character small-right" alt="Character 3">
+    </div>
+    
+    <!-- Right arrow button to navigate -->
+    <button class="arrow right-arrow" id="right-arrow">&#9654;</button>
+
+  </div>
+
+  <script src="character-selection.js"></script> <!-- Link to JavaScript for functionality -->
 </body>
 </html>
