@@ -1,9 +1,12 @@
 body {
+    margin: 0;
     position: relative;
     display:flex;
+    justify-content: center;
+    align-items: center;
     border: solid black 10px;
     width: 1024px;
-    height: 768px;
+    height: 100vh;
     left: 50%;
     transform: translateX(-50%);
     justify-items: center;
@@ -17,21 +20,31 @@ body {
     
 }
 
-.bg-images {
-    padding: 2em;
-    background-image: 
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url("");
-    background-repeat: no-repeat;
-    background-position: top left, top right;
+.container {
+    position: relative;
+    display: flex;
+    border: solid black 10px;
+    width: 1024px;
+    height: 768px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden; /* Ensures images fit within the container */
 }
+
+.bg-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%%;
+    height: 100%;
+}
+
+img {
+        width: 100%;
+        height: 100%; /* Maintain aspect ratio */
+        object-fit: cover; /* Cover the area without distortion */
+}
+
 
 .button {
 
