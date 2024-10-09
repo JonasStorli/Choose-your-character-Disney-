@@ -17,7 +17,7 @@ body {
     overflow: hidden; /* Hide overflow from images */
 }
 
-.grid {
+.bg-images {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
