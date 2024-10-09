@@ -36,14 +36,22 @@ h1 {
     
 }
 
-.grid-img:hover {
-    transform: scale(1.1) rotate(15deg); /* Rotate and scale */
-    filter: brightness(1.2); /* Optional brightness */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
-    transition: transform 0.6s ease-in-out; /* Smooth transition */
+.grid-img{
+    transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out; /* Smooth transition */
 }
 
-
+.grid-img:hover {
+    transform: scale(1.1); /* Rotate and scale */
+    filter: brightness(1.2); /* Optional brightness */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+    
+}
+.grid-img:hover ~ .grid-img:not(:hover),
+.grid-img:not(:hover) {
+    transform: scale(0.94); /* Shrink other images */
+    filter: blur(2px); /* Apply blur */
+    transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out; /* Smooth transition */
+}
 img {
     width: 100%; /* Fill the grid cell's width */
     height: auto; /* Maintain aspect ratio */
@@ -64,7 +72,7 @@ img {
     border-radius: 12px;
     display: flex;
     position: absolute; /* Absolute positioning */
-    top: 400px; /* Adjust distance from the top */
+    top: 50%; /* Adjust distance from the top */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for centering */
     background-color: #4CAF50; /* Green background */
@@ -82,7 +90,14 @@ img {
     background: linear-gradient(to right, #00007E,#0000A5,#0000DF);
     color: #fff;
     transition: all 0.3s ease;
+
 }
+
+
+.button:hover{
+    transform: translateX(-50%) scale(1.4);
+}
+
 .button::after {
     content: "";
     z-index: -1;
