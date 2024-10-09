@@ -23,15 +23,12 @@ body {
     grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
     width: 100%; /* Full width of the container */
     height: 100%; /* Full height of the container */
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    width: 100%;
-    height: 100%
 }
 
 img {
     width: 100%; /* Fill the grid cell's width */
     height: 100%; /* Fill the grid cell's height */
+<<<<<<< HEAD
     object-fit: cover; /* Maintain aspect ratio, cover the area */
 }
 
@@ -63,3 +60,8 @@ img {
     width: 100vw; /* Full viewport width */
   }
   
+=======
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    border: 2px solid white; /* Optional: Add a border around images */
+}
+>>>>>>> ccf65d8086612e8b8e6b6edb428207cebf6492c3
