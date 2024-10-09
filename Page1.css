@@ -1,8 +1,37 @@
-.bg-images {
-    outline: 2px solid black;
+body {
+    position: relative;
+    display:flex;
+    border: solid black 10px;
+    width: 1024px;
+    height: 768px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    padding: 20em;
-    background-image: url("")
+.png {
+    width: 100px;
+}
+
+.png:hover {
     
+}
+
+.bg-images {
+    padding: 2em;
+    background-image: 
+        url(""),
+        url(""),
+        url(""),
+        url(""),
+        url(""),
+        url(""),
+        url(""),
+        url(""),
+        url("");
+    background-repeat: no-repeat;
+    background-position: top left, top right;
+}
+
+.button {
 
 }
