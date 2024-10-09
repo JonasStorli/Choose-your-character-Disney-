@@ -13,8 +13,9 @@ h1 {
 }
 
 .container {
+    position: relative; /* Set position to relative for absolute positioning of button */
     border: 10px solid black; /* Border around the container */
-    width: 1064px; /* Fixed width */
+    width: 1024px; /* Updated width */
     height: 768px; /* Fixed height */
     display: flex;
     justify-content: center;
@@ -27,40 +28,45 @@ h1 {
     grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
     width: 100%; /* Full width of the container */
     height: 100%; /* Full height of the container */
-    gap: 10px; /* Space between images */
+    gap: 5px; /* Reduced space between images for even spacing */
     padding: 10px; /* Padding inside the grid */
 }
 
 img {
     width: 100%; /* Fill the grid cell's width */
     height: auto; /* Maintain aspect ratio */
-    max-height: 100%; /* Limit height to grid cell */
+    max-height: 200px; /* Limit height for smaller images */
     object-fit: cover; /* Cover the area while maintaining aspect ratio */
     border: 2px solid white; /* Border around images */
 }
 
 /* Styling the anchor tag as a button */
 .button {
+    display: flex;
+    padding: 10px 20px;
+    position: absolute; /* Absolute positioning */
+    top: 400px; /* Adjust distance from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
     background-color: #4CAF50; /* Green background */
     color: white; /* White text */
-    padding: 15px 30px; /* Padding for button size */
+    padding: 20px 65px; /* Padding for button size */
     font-size: 20px; /* Font size */
     text-align: center; /* Center text inside the button */
     text-decoration: none; /* Remove underline from the link */
-    display: inline-block; /* Makes it behave like a button */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease; /* Smooth transition on hover */
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    background: #00007E;
+    background: -webkit-linear-gradient(to right, #00007E,#0000A5,#0000DF);
+    background: linear-gradient(to right, #00007E,#0000A5,#0000DF);
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 .button:hover {
     background-color: #45a049; /* Darker green on hover */
-}
-
-/* Centering the button container */
-.center-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px; /* Adjusted height */
 }
