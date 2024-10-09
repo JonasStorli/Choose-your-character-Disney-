@@ -6,6 +6,7 @@ body {
     height: 768px;
     left: 50%;
     transform: translateX(-50%);
+    justify-items: center;
 }
 
 .png {
