@@ -1,75 +1,74 @@
-/* General Styling */
+/* General styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #d3d3d3d2
     margin: 0;
     padding: 0;
-    text-align: center;
   }
   
   .heading {
     font-size: 2.5rem;
-    margin: 20px 0;
     color: #333;
+    margin: 20px 0;
   }
   
-  /* Container for the whole character selection */
+  /* Hide the radio buttons */
+  input[type="radio"] {
+    display: none;
+  }
+  
+  /* Container for the character selection */
   .character-selection-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
     position: relative;
+    margin-top: 50px;
   }
   
-  /* Character display area */
+  /* Layout for character display */
   .character-display {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 600px;  /* Set a fixed width for layout */
+    overflow: hidden;
     position: relative;
   }
   
-  /* Styling for all character images */
+  /* Character image default styles */
   .character {
-    margin: 0 15px;
-    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 150px; /* Small size for side characters */
+    opacity: 0.5; /* Dim the side characters */
+    transition: all 0.5s ease;
   }
   
-  /* Make the middle character larger */
-  .character.active {
-    transform: scale(1.2);
+  /* When the corresponding radio button is selected, show the middle character larger */
+  #char1:checked ~ .character-display label:nth-child(1),
+  #char2:checked ~ .character-display label:nth-child(2),
+  #char3:checked ~ .character-display label:nth-child(3),
+  #char4:checked ~ .character-display label:nth-child(4),
+  #char5:checked ~ .character-display label:nth-child(5),
+  #char6:checked ~ .character-display label:nth-child(6) {
+    width: 200px; /* Larger size for the middle character */
+    opacity: 1; /* Full opacity for the middle character */
+    transform: scale(1.2); /* Slight zoom effect */
   }
   
-  /* Make the left and right characters slightly smaller */
-  .small-left, .small-right {
-    transform: scale(0.9);
-    opacity: 0.8; /* Optional: Make them slightly transparent */
-  }
-  
-  /* Arrow button styling */
-  .arrow {
-    background-color: #333;
-    color: white;
-    border: none;
-    font-size: 2rem;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .arrow:hover {
-    background-color: #555;
-  }
-  
-  /* Positioning arrows next to the characters */
-  .left-arrow {
-    position: absolute;
-    left: -50px;
-  }
-  
-  .right-arrow {
-    position: absolute;
-    right: -50px;
+  /* Automatically scale adjacent characters slightly */
+  #char1:checked ~ .character-display label:nth-child(2),
+  #char2:checked ~ .character-display label:nth-child(3),
+  #char3:checked ~ .character-display label:nth-child(4),
+  #char4:checked ~ .character-display label:nth-child(5),
+  #char5:checked ~ .character-display label:nth-child(6),
+  #char6:checked ~ .character-display label:nth-child(1) {
+    width: 150px;
+    opacity: 0.75; /* Slightly more visible */
+    transform: scale(1.1); /* Slightly larger */
   }
   

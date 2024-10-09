@@ -34,3 +34,32 @@ img {
     height: 100%; /* Fill the grid cell's height */
     object-fit: cover; /* Maintain aspect ratio, cover the area */
 }
+
+/* Styling the anchor tag as a button */
+.button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 15px 30px; /* Padding for button size */
+    font-size: 20px; /* Font size */
+    text-align: center; /* Center text inside the button */
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block; /* Makes it behave like a button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  /* Hover effect for button */
+  .button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  /* Centering the button in the middle of the screen */
+  .center-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+  }
+  
