@@ -34,6 +34,14 @@ h1 {
     
 }
 
+.grid-img:hover {
+    transform: scale(1.1) rotate(15deg); /* Rotate and scale */
+    filter: brightness(1.2); /* Optional brightness */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+    transition: transform 0.6s ease-in-out; /* Smooth transition */
+}
+
+
 img {
     width: 100%; /* Fill the grid cell's width */
     height: auto; /* Maintain aspect ratio */

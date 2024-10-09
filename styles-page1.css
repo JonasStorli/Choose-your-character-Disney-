@@ -1,5 +1,5 @@
 body{
-    background-color: #111;
+    background-color: #111111;
     height: 100vh;
 }
 
@@ -11,11 +11,15 @@ body{
     border-radius: 20%;
     z-index: -1;
     background-color: #18191f;
-    box-shadow: 0 0 50px #0000df,
-                0 0 100px #0000df,
-                0 0 150px #0000df,
-                0 0 200px #0000df;
+    box-shadow: 0 0 50px #00007e,
+                0 0 100px #00007e,
+                0 0 150px #00007e,
+                0 0 200px #00007e;
     animation: animate 10s linear infinite;
+}
+
+.text{
+    background-color: #fff;
 }
 
 .wrapper span:nth-child(1){
