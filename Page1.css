@@ -10,14 +10,14 @@ body {
     position: relative;
     display: flex;
     border: solid black 10px; /* Border around the container */
-    width: 1024px; /* Fixed width */
-    height: 768px; /* Fixed height */
+    width: 1064px; /* Adjusted width */
+    height: 768px; /* Adjusted height */
     left: 50%; /* Center the container */
     transform: translateX(-50%); /* Adjust for centering */
     overflow: hidden; /* Hide overflow from images */
 }
 
-.grid {
+.bg-images {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
@@ -28,7 +28,8 @@ body {
 img {
     width: 100%; /* Fill the grid cell's width */
     height: 100%; /* Fill the grid cell's height */
-    object-fit: cover; /* Maintain aspect ratio, cover the area */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    border: 2px solid white; /* Optional: Add a border around images */
 }
 
 /* Styling the anchor tag as a button */
