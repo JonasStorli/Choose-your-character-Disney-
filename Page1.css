@@ -60,7 +60,4 @@ img {
     width: 100vw; /* Full viewport width */
   }
   
-    object-fit: cover; /* Cover the area while maintaining aspect ratio */
-    border: 2px solid white; /* Optional: Add a border around images */
-}
-
+   
