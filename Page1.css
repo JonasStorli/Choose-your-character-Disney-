@@ -10,6 +10,7 @@ body {
 
 h1 {
     margin-bottom: 20px; /* Space between title and container */
+    color: #fff;
 }
 
 .container {
@@ -22,18 +23,21 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    transition: filter 0.3s ease-in-out  
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
+    width: 100%;
+    height: 100%;
     gap: 5px; /* Reduced space between images for even spacing */
     padding: 10px; /* Padding inside the grid */
-    
+}
+
+.grid-img {
+    transition: filter 0.3s ease-in-out
 }
 
 .grid-img:hover {
@@ -60,7 +64,7 @@ img {
     color: #fff;
     cursor: pointer;
     position: relative;
-    z-index: 0;
+    z-index: 1;
     border-radius: 12px;
     display: flex;
     position: absolute; /* Absolute positioning */
@@ -83,6 +87,7 @@ img {
     color: #fff;
     transition: all 0.3s ease;
 }
+
 .button::after {
     content: "";
     z-index: -1;
