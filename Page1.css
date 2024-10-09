@@ -17,20 +17,20 @@ body {
 }
 
 .bg-images {
-    padding: 2em;
-    background-image: 
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url(""),
-        url("");
-    background-repeat: no-repeat;
-    background-position: top left, top right;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Adjust the gap between images */
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Optional max-width */
 }
+
+img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 5px; /* Optional styling */
+        object-fit: cover; /* Cover the area without distortion */
+}
+
 
 .button {
 
