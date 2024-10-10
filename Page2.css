@@ -1,8 +1,29 @@
 body {
-    background-color:rgb(0, 0, 0);
+    background-color:rgb(255, 255, 255);
 }
 
+
 #logo{
-  position: relative;
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  opacity: 1;
+  animation: fadeOut 5s ease forwards;
+  animation-delay: 0s;
+}
+
+
+@keyframes fadeOut{
+  to {
+    opacity: 0;
+    transform: translateX(-50%) scale(3);
+    filter: blur(10px);
+    visibility: hidden;
+  }
+}
+
+.grid-img{
   width: 100px;
 }
