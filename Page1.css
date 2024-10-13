@@ -13,6 +13,58 @@ h1 {
     color: #fff;
 }
 
+#ironman{
+    width: 100px;
+    position: absolute;
+    animation: moveleft 6s forwards;
+}
+
+@keyframes moveleft{
+    from {
+        transform:translateY(10px) translateX(1500px);
+    }
+    to {
+        transform:translateY(-300px) translateX(-1500px);
+    }
+}
+
+#minihulk {
+    width: 100px;
+    position: absolute;
+    top: 87%;
+    left: 100%;
+    transform: translateY(-50%);
+    animation: moveAlongPath 10s ease-in;
+}
+
+@keyframes moveAlongPath {
+    from {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-1500px, 0px); /* Move to the right and up */
+    }
+    50% {
+      transform: translate(-1300px, -300px); /* Continue right and curve down */
+    }
+    75% {
+      transform: translate(-1500px, -500px); /* Continue right and curve back up */
+    }
+    to {
+      transform: translate(-1700px, -500px); /* End at far right */
+    }
+  }
+  #hangingspider {
+    width: 100px;
+    position: absolute;
+    top: 0.4%;
+    left: 90%;
+    transition: transform 1s ease-in-out; /* Smooth transition both ways */
+}
+
+#hangingspider:hover {
+    transform: translateY(-150px); /* Moves up */
+}
 .container {
     background-color: #000;
     position: relative; /* Set position to relative for absolute positioning of button */
