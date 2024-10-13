@@ -1,29 +1,339 @@
-body {
-    background-color:rgb(255, 255, 255);
+@font-face {
+  font-family: avenger;
+  src: url(../fonts/AVENGER.ttf);
 }
 
+@keyframes moveUp {
+  to {
+    transform: translateY(-80px); /* Images move up */
+  }
+}
 
-#logo{
+@keyframes moveDown {
+  from {
+    transform: translateY(20px); /* Hidden info moves down */
+  }to{
+    transform: translateY(300px);
+  }
+}
+
+@keyframes moveUpBack {
+  from {
+    transform: translateY(300px); /* Return from down position */
+    opacity: 1;
+  }
+  to {
+    transform: translateY(20px); /* Back to original position */
+    opacity: 0;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  overflow: hidden;
+  justify-content: center;
+}
+
+#logo {
   position: absolute;
-  top: 17%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
-  width: 1000px;
+  width: 500px;
   opacity: 1;
-  animation: fadeOut 5s ease forwards;
+  animation: fadeOut 6s ease forwards;
   animation-delay: 0s;
+  z-index: 1000;
 }
 
-
-@keyframes fadeOut{
+@keyframes fadeOut {
   to {
     opacity: 0;
-    transform: translateX(-50%) scale(3);
+    transform: translateX(-50%) scale(5);
     filter: blur(10px);
     visibility: hidden;
   }
 }
 
-.grid-img{
-  width: 100px;
+h1 {
+  margin-bottom: 20px;
+  font-family: avenger, cursive;
+  font-size: 400%;
+  top: 20px;
+  letter-spacing: 0.25rem;
+  color: #000;
+  -webkit-text-stroke: 0.01px #ED1D24;
+  position: relative;
+  text-align: center;
+}
+
+h2 {
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  color: green;
+  padding: 5px;
+}
+
+.hiddeninfo {
+  border: solid green 2px;
+  background-color: black;
+  width: 355px;
+  height: 320px;
+  position: absolute;
+  top: 100px;
+  z-index: -1; /* Ensure it's behind the image */
+  opacity: 1; /* Initially hidden */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.slide-container {
+  position: relative;
+  margin: 10px;
+  padding: 10px;
+  border: solid #fff 3px;
+  width: 1024px;
+  height: 768px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 170px;
+  padding: 0;
+}
+
+.img-slider {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  display: flex;
+  top: -40px;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.7s ease-in-out;
+  z-index: 2;
+}
+
+.button {
+  position: absolute;
+  width: 370px;
+  height: 370px;
+  transition: .5s;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, .2);
+}
+
+/* Specific styling for each image when it's targeted */
+#slider-span1:target ~ .img-slider #img1,
+#slider-span1:target ~ .img-slider #button-1,
+#slider-span2:target ~ .img-slider #img2,
+#slider-span2:target ~ .img-slider #button-2,
+#slider-span3:target ~ .img-slider #img3,
+#slider-span3:target ~ .img-slider #button-3,
+#slider-span4:target ~ .img-slider #img4,
+#slider-span4:target ~ .img-slider #button-4,
+#slider-span5:target ~ .img-slider #img5,
+#slider-span5:target ~ .img-slider #button-5,
+#slider-span6:target ~ .img-slider #img6,
+#slider-span6:target ~ .img-slider #button-6,
+#slider-span7:target ~ .img-slider #img7,
+#slider-span7:target ~ .img-slider #button-7,
+#slider-span8:target ~ .img-slider #img8,
+#slider-span8:target ~ .img-slider #button-8,
+#slider-span9:target ~ .img-slider #img9,
+#slider-span9:target ~ .img-slider #button-9 {
+  width: 380px;
+  background-color: transparent;
+  filter: saturate(100%);
+}
+
+/* Correctly target hiddeninfo inside slider-div */
+#slider-span1:target ~ .img-slider #slide1 .hiddeninfo,
+#slider-span2:target ~ .img-slider #slide2 .hiddeninfo,
+#slider-span3:target ~ .img-slider #slide3 .hiddeninfo,
+#slider-span4:target ~ .img-slider #slide4 .hiddeninfo,
+#slider-span5:target ~ .img-slider #slide5 .hiddeninfo,
+#slider-span6:target ~ .img-slider #slide6 .hiddeninfo,
+#slider-span7:target ~ .img-slider #slide7 .hiddeninfo,
+#slider-span8:target ~ .img-slider #slide8 .hiddeninfo,
+#slider-span9:target ~ .img-slider #slide9 .hiddeninfo {
+  opacity: 1;
+  animation: moveDown 1.4s forwards;
+  z-index: -1; /* Bring to front when active */
+}
+
+/* Ensure non-targeted hiddeninfo stays hidden */
+#slider-span1:not(:target) ~ .img-slider #slide1 .hiddeninfo,
+#slider-span2:not(:target) ~ .img-slider #slide2 .hiddeninfo,
+#slider-span3:not(:target) ~ .img-slider #slide3 .hiddeninfo,
+#slider-span4:not(:target) ~ .img-slider #slide4 .hiddeninfo,
+#slider-span5:not(:target) ~ .img-slider #slide5 .hiddeninfo,
+#slider-span6:not(:target) ~ .img-slider #slide6 .hiddeninfo,
+#slider-span7:not(:target) ~ .img-slider #slide7 .hiddeninfo,
+#slider-span8:not(:target) ~ .img-slider #slide8 .hiddeninfo,
+#slider-span9:not(:target) ~ .img-slider #slide9 .hiddeninfo {
+  opacity: 0;
+  z-index: -1;
+  animation: none;
+  transform: translateY(0);
+}
+
+/* Ensure non-targeted hiddeninfo smoothly goes back */
+#slider-span1:not(:target) ~ .img-slider #slide1 .hiddeninfo,
+#slider-span2:not(:target) ~ .img-slider #slide2 .hiddeninfo,
+#slider-span3:not(:target) ~ .img-slider #slide3 .hiddeninfo,
+#slider-span4:not(:target) ~ .img-slider #slide4 .hiddeninfo,
+#slider-span5:not(:target) ~ .img-slider #slide5 .hiddeninfo,
+#slider-span6:not(:target) ~ .img-slider #slide6 .hiddeninfo,
+#slider-span7:not(:target) ~ .img-slider #slide7 .hiddeninfo,
+#slider-span8:not(:target) ~ .img-slider #slide8 .hiddeninfo,
+#slider-span9:not(:target) ~ .img-slider #slide9 .hiddeninfo {
+  animation: moveUpBack 1.4s forwards; /* Smoothly move back */
+  opacity: 0;
+  z-index: -1;
+}
+
+.img-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.7s ease-in-out;
+  transform: translateX(-40%);
+  animation: moveup 2s forwards;
+}
+.img {
+  height: 365px;
+  transition: 0.5s;
+  filter: saturate(10%);
+  border-radius: 16px;
+}
+
+.img:hover {
+  filter: saturate(100%);
+  transform: scale(1.0);
+  transition: top 2s;
+}
+
+#slider-span1:target ~ .img-slider {
+  transform: translateX(172%);
+}
+
+#slider-span2:target ~ .img-slider {
+  transform: translateX(129%);
+}
+
+#slider-span3:target ~ .img-slider {
+  transform: translateX(86%);
+}
+
+#slider-span4:target ~ .img-slider {
+  transform: translateX(43%);
+}
+
+#slider-span5:target ~ .img-slider {
+  transform: translateX(0);
+}
+
+#slider-span6:target ~ .img-slider {
+  transform: translateX(-43%);
+}
+
+#slider-span7:target ~ .img-slider {
+  transform: translateX(-86%);
+}
+
+#slider-span8:target ~ .img-slider {
+  transform: translateX(-129%);
+}
+
+#slider-span9:target ~ .img-slider {
+  transform: translateX(-172%);
+}
+
+/* Move the image up */
+#slider-span1:target ~ .img-slider #img1 {
+  animation: moveUp 1s forwards;
+}
+
+#slider-span2:target ~ .img-slider #img2 {
+  animation: moveUp 1s forwards;
+}
+
+#slider-span3:target ~ .img-slider #img3 {
+  animation: moveUp 1s forwards;
+}
+
+#slider-span4:target ~ .img-slider #img4 {
+  animation: moveUp 1s forwards;
+}
+
+#slider-span5:target ~ .img-slider #img5 {
+  animation: moveUp 1s forwards;
+}
+
+#slider-span6:target ~ .img-slider #img6 {
+  animation: moveUp 1s forwards;
+}
+
+#slider-span7:target ~ .img-slider #img7 {
+  animation: moveUp 1s forwards;
+}
+
+#slider-span8:target ~ .img-slider #img8 {
+  animation: moveUp 1s forwards;
+}
+
+#slider-span9:target ~ .img-slider #img9 {
+  animation: moveUp 1s forwards;
+}
+
+
+#slider-span1:target ~ .hiddeninfo #img1 {
+  animation: moveDown 1s forwards;
+}
+
+#slider-span2:target ~ .hiddeninfo #img2 {
+  animation: moveDown 1s forwards;
+}
+
+#slider-span3:target ~ .hiddeninfo #img3 {
+  animation: moveDown 1s forwards;
+}
+
+#slider-span4:target ~ .hiddeninfo #img4 {
+  animation: moveDown 1s forwards;
+}
+
+#slider-span5:target ~ .hiddeninfo #img5 {
+  animation: moveDown 1s forwards;
+}
+
+#slider-span6:target ~ .hiddeninfo #img6 {
+  animation: moveDown 1s forwards;
+}
+
+#slider-span7:target ~ .hiddeninfo #img7 {
+  animation: moveDown 1s forwards;
+}
+
+#slider-span8:target ~ .hiddeninfo #img8 {
+  animation: moveDown 1s forwards;
+}
+
+#slider-span9:target ~ .hiddeninfo #img9 {
+  animation: moveDown 1s forwards;
 }

@@ -21,22 +21,26 @@ h1 {
     position: relative;
 }
 h1::before{
-    content: "Marvel-Videogame...";
-    position: absolute;
+    margin-bottom: 20px;
+    content: "Marvel Characters";
+    font-family: avenger, cursive;
     top: 0;
     left: 0;
+    letter-spacing: 0.25rem;
     overflow: hidden; 
     width: 0;
     height: 100%;
     color: #ED1D24;
-    border-right: 2px solid #ED1D24;
+    position: absolute;
     transition: width 1s ease-in-out;
     white-space: nowrap; /* Prevents text wrapping */
+    z-index: 0;
 }
 
 h1:hover::before{
     width: 100%;
     filter: drop-shadow(0 0 25px #ED1D24);
+
 }
 
 
