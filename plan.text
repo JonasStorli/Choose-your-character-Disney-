@@ -1,0 +1,13 @@
+plan:
+
+page 1:
+lage en intraktiv grid med bilder med hoverelementer,
+noen animaerte karakterer som skal gå fra en side til den andre på en eller annen måte.
+lage en button med diverse effekter som er gøye.
+alt skal ligge inni en 1024x768 res container.
+
+page 2:
+lage en intraktiv slider med karakterene vist i første page, disse bildene skal være saturate(10%) 
+for en lettere førstøelse på vilket bilde som er aktiv.
+effekter som skale være her er en bios slider som kommer ned fra bildet som er aktive,
+info om karakterene skal være her, bilde vil flyte på sin y posisjon for bedre plass.
