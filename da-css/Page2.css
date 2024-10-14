@@ -1,33 +1,39 @@
+/*nedlastet font custom */
 @font-face {
   font-family: avenger;
   src: url(../fonts/AVENGER.ttf);
 }
 
+
+/*Bilder går opp nor klicket på */
 @keyframes moveUp {
   to {
-    transform: translateY(-80px); /* Images move up */
+    transform: translateY(-80px); 
   }
 }
 
+/* hiddeninfo går ned mens bilde går opp */
 @keyframes moveDown {
   from {
-    transform: translateY(20px); /* Hidden info moves down */
+    transform: translateY(20px);
   }to{
     transform: translateY(300px);
   }
 }
 
+/*retunerer hiddeninfo */
 @keyframes moveUpBack {
   from {
-    transform: translateY(300px); /* Return from down position */
+    transform: translateY(300px); 
     opacity: 1;
   }
   to {
-    transform: translateY(20px); /* Back to original position */
+    transform: translateY(20px);
     opacity: 0;
   }
 }
 
+/* body med overflow:hidden; */
 body {
   padding: 0;
   margin: 0;
@@ -40,6 +46,7 @@ body {
   justify-content: center;
 }
 
+/*logo animasjon for intro til side 2 */
 #logo {
   position: absolute;
   top: 25%;
@@ -52,6 +59,7 @@ body {
   z-index: 1000;
 }
 
+/*selve animasjonen til logo */
 @keyframes fadeOut {
   to {
     opacity: 0;
@@ -61,6 +69,7 @@ body {
   }
 }
 
+/*titel til side 2 */
 h1 {
   margin-bottom: 20px;
   font-family: avenger, cursive;
@@ -73,6 +82,7 @@ h1 {
   text-align: center;
 }
 
+/*Hiddeninfo text style */
 h2 {
   font-size: 14px;
   font-family: 'Courier New', Courier, monospace;
@@ -80,6 +90,7 @@ h2 {
   padding: 5px;
 }
 
+/* hiddeninfo container med border og backgrunn */
 .hiddeninfo {
   border: solid green 2px;
   background-color: black;
@@ -92,6 +103,7 @@ h2 {
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
+/*selve oppløsningen 1024x768 */
 .slide-container {
   position: relative;
   margin: 10px;
@@ -104,6 +116,7 @@ h2 {
   overflow: hidden;
 }
 
+/*posisjonering av bildene */
 .slider-div {
   display: flex;
   align-items: center;
@@ -112,6 +125,7 @@ h2 {
   padding: 0;
 }
 
+/*mer posisjonering med z-index og transition */
 .img-slider {
   width: 100%;
   height: 600px;
@@ -125,6 +139,7 @@ h2 {
   z-index: 2;
 }
 
+/*selveste knappen til side to, alle bildene er en butten */
 .button {
   position: absolute;
   width: 370px;
@@ -133,11 +148,12 @@ h2 {
   background-color: rgba(0, 0, 0, .4);
 }
 
+/*prøvde meg på en visuel hover med alpha */
 .button:hover {
   background-color: rgba(0, 0, 0, .2);
 }
 
-/* Specific styling for each image when it's targeted */
+/* uniq styling av target bilde */
 #slider-span1:target ~ .img-slider #img1,
 #slider-span1:target ~ .img-slider #button-1,
 #slider-span2:target ~ .img-slider #img2,
@@ -161,7 +177,7 @@ h2 {
   filter: saturate(100%);
 }
 
-/* Correctly target hiddeninfo inside slider-div */
+/* target hiddeninfo på click */
 #slider-span1:target ~ .img-slider #slide1 .hiddeninfo,
 #slider-span2:target ~ .img-slider #slide2 .hiddeninfo,
 #slider-span3:target ~ .img-slider #slide3 .hiddeninfo,
@@ -176,7 +192,7 @@ h2 {
   z-index: -1; /* Bring to front when active */
 }
 
-/* Ensure non-targeted hiddeninfo stays hidden */
+/* passe på at bare info på clicket bilde vises */
 #slider-span1:not(:target) ~ .img-slider #slide1 .hiddeninfo,
 #slider-span2:not(:target) ~ .img-slider #slide2 .hiddeninfo,
 #slider-span3:not(:target) ~ .img-slider #slide3 .hiddeninfo,
@@ -192,7 +208,7 @@ h2 {
   transform: translateY(0);
 }
 
-/* Ensure non-targeted hiddeninfo smoothly goes back */
+/* hiddeninfo går hjem når ferdig */
 #slider-span1:not(:target) ~ .img-slider #slide1 .hiddeninfo,
 #slider-span2:not(:target) ~ .img-slider #slide2 .hiddeninfo,
 #slider-span3:not(:target) ~ .img-slider #slide3 .hiddeninfo,
@@ -202,11 +218,12 @@ h2 {
 #slider-span7:not(:target) ~ .img-slider #slide7 .hiddeninfo,
 #slider-span8:not(:target) ~ .img-slider #slide8 .hiddeninfo,
 #slider-span9:not(:target) ~ .img-slider #slide9 .hiddeninfo {
-  animation: moveUpBack 1.4s forwards; /* Smoothly move back */
+  animation: moveUpBack 1.4s forwards;
   opacity: 0;
   z-index: -1;
 }
 
+/*bilder går 👆 */
 .img-slider {
   display: flex;
   justify-content: center;
@@ -215,6 +232,8 @@ h2 {
   transform: translateX(-40%);
   animation: moveup 2s forwards;
 }
+
+/*bilde catfish*/
 .img {
   height: 365px;
   transition: 0.5s;
@@ -222,12 +241,14 @@ h2 {
   border-radius: 16px;
 }
 
+/*bilde gjøre noe*/
 .img:hover {
   filter: saturate(100%);
   transform: scale(1.0);
   transition: top 2s;
 }
 
+/*bilde du clicker går til center av sjerm*/
 #slider-span1:target ~ .img-slider {
   transform: translateX(172%);
 }
@@ -264,7 +285,7 @@ h2 {
   transform: translateX(-172%);
 }
 
-/* Move the image up */
+/*bilde går opp */
 #slider-span1:target ~ .img-slider #img1 {
   animation: moveUp 1s forwards;
 }
@@ -302,6 +323,7 @@ h2 {
 }
 
 
+/*hiddeninfo går ned*/
 #slider-span1:target ~ .hiddeninfo #img1 {
   animation: moveDown 1s forwards;
 }

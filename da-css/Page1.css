@@ -1,18 +1,21 @@
+/*custom font*/
 @font-face {
     font-family: avenger;
     src: url(../fonts/AVENGER.ttf);
 }
 
+/*body flex med column*/
 body { 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh;
 }
 
+/*h1 sminker seg*/
 h1 {
-    margin-bottom: 20px; /* Space between title and container */
+    margin-bottom: 20px;
     font-family: avenger, cursive;
     font-size: 300%;
     letter-spacing: 0.25rem;
@@ -20,6 +23,7 @@ h1 {
     -webkit-text-stroke: 0.01px #ED1D24;
     position: relative;
 }
+/*h1 skal fylles opp med rød med font er litt rar*/
 h1::before{
     margin-bottom: 20px;
     content: "Marvel Characters";
@@ -43,7 +47,7 @@ h1:hover::before{
 
 }
 
-
+/*anker text*/
 a {
     color: #fff;
     font-family: avenger, cursive;
@@ -53,7 +57,7 @@ a {
     top: 50%;
     left: 50%;
 }
-
+/*ironman animasjon*/
 #ironman{
     width: 100px;
     position: absolute;
@@ -69,6 +73,7 @@ a {
     }
 }
 
+/*hulk animasjon*/
 #minihulk {
     width: 100px;
     position: absolute;
@@ -95,17 +100,20 @@ a {
       transform: translate(-1700px, -500px); /* End at far right */
     }
   }
-  #hangingspider {
+/*spiderman animasjon*/
+#hangingspider {
     width: 100px;
     position: absolute;
     top: 0.4%;
     left: 90%;
     transition: transform 1s ease-in-out; /* Smooth transition both ways */
 }
-
+/*spiderman liker ikke nærkontakt*/
 #hangingspider:hover {
     transform: translateY(-150px); /* Moves up */
 }
+
+/*container er ikke vampyr*/
 .container {
     background-color: #000;
     position: relative; /* Set position to relative for absolute positioning of button */
@@ -119,45 +127,51 @@ a {
     transition: filter 0.3s ease-in-out;  
 }
 
+/*bilder er i en 3x3 posisjon*/
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr); 
     width: 100%;
     height: 100%;
-    gap: 5px; /* Reduced space between images for even spacing */
-    padding: 10px; /* Padding inside the grid */
+    gap: 5px; 
+    padding: 10px; 
 }
 
 .grid-img {
     transition: filter 0.3s ease-in-out;
 }
-
+/*vet ikke kofor vi har to men det fungerer*/
 .grid-img{
-    transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out; /* Smooth transition */
+    transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out;
 }
 
+/*litt hover effekt på bildene*/
 .grid-img:hover {
-    transform: scale(1.1); /* Rotate and scale */
-    filter: brightness(1.2); /* Optional brightness */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+    transform: scale(1.1); 
+    filter: brightness(1.2); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     
 }
+
+/*alle bildene bilr midre og blured utenom hover*/
 .grid-img:hover ~ .grid-img:not(:hover),
 .grid-img:not(:hover) {
-    transform: scale(0.94); /* Shrink other images */
-    filter: blur(2px); /* Apply blur */
-    transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out; /* Smooth transition */
-}
-img {
-    width: 100%; /* Fill the grid cell's width */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 200px; /* Limit height for smaller images */
-    object-fit: cover; /* Cover the area while maintaining aspect ratio */
-    border: 4x solid rgb(95, 54, 54); /* Border around images */
+    transform: scale(0.94); 
+    filter: blur(2px); 
+    transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out;
 }
 
-/* Styling the anchor tag as a button */
+/*bildeene kan ikke bli støre en 200px*/
+img {
+    width: 100%; 
+    height: auto;
+    max-height: 200px; 
+    object-fit: cover; 
+    border:0 rgb(95, 54, 54);
+}
+
+/* fin knapp med diverse rgb lightning integrert */
 .button {
     padding: 15px 40px;
     border: none;
@@ -168,19 +182,19 @@ img {
     z-index: 1;
     border-radius: 12px;
     display: flex;
-    position: absolute; /* Absolute positioning */
-    top: 50%; /* Adjust distance from the top */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    padding: 20px 65px; /* Padding for button size */
-    font-size: 20px; /* Font size */
-    text-align: center; /* Center text inside the button */
-    text-decoration: none; /* Remove underline from the link */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 20px 65px; 
+    font-size: 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
     border-radius: 100px;
     background: #00007E;
     background: -webkit-linear-gradient(to right, #00007E,#0000A5,#0000DF);
@@ -204,6 +218,8 @@ img {
     top: 0;
     border-radius: 10px;
 }
+
+/*hover color */
 .button::before {
     content: "";
     background: linear-gradient(
