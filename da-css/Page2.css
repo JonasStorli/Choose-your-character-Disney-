@@ -1,30 +1,31 @@
 @font-face {
   font-family: avenger;
-  src: url(../fonts/AVENGER.ttf);
+  src: url(../fonts/AVENGER.ttf); /* Importerer egendefinert font */
 }
 
 @keyframes moveUp {
   to {
-    transform: translateY(-80px); /* Images move up */
+    transform: translateY(-80px); /* Flytter bilde opp */
   }
 }
 
 @keyframes moveDown {
   from {
-    transform: translateY(20px); /* Hidden info moves down */
-  }to{
-    transform: translateY(300px);
+    transform: translateY(20px); /* Starter opp, flytter info ned */
+  }
+  to {
+    transform: translateY(300px); /* Flytter info lengre ned */
   }
 }
 
 @keyframes moveUpBack {
   from {
-    transform: translateY(300px); /* Return from down position */
-    opacity: 1;
+    transform: translateY(300px); /* Starter nede */
+    opacity: 1; /* Synlig */
   }
   to {
-    transform: translateY(20px); /* Back to original position */
-    opacity: 0;
+    transform: translateY(20px); /* Tilbake til start */
+    opacity: 0; /* Usynlig */
   }
 }
 
@@ -32,112 +33,112 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Fyller hele skjermens høyde */
   display: flex;
-  align-items: center;
-  background-color: black;
-  overflow: hidden;
-  justify-content: center;
+  align-items: center; /* Sentrerer innholdet vertikalt */
+  background-color: black; /* Setter bakgrunnsfargen til svart */
+  overflow: hidden; /* Skjuler innhold som går utenfor vinduet */
+  justify-content: center; /* Sentrerer innholdet horisontalt */
 }
 
 #logo {
   position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  opacity: 1;
-  animation: fadeOut 6s ease forwards;
-  animation-delay: 0s;
-  z-index: 1000;
+  top: 25%; /* Plasserer logoen 25% fra toppen */
+  left: 50%; /* Plasserer logoen midt på siden horisontalt */
+  transform: translateX(-50%); /* Justerer logoens posisjon for å sentrere det */
+  width: 500px; /* Setter bredden til 500px */
+  opacity: 1; /* Logoen er fullt synlig */
+  animation: fadeOut 6s ease forwards; /* Fader ut logoen over 6 sekunder */
+  animation-delay: 0s; /* Ingen forsinkelse for animasjonen */
+  z-index: 1000; /* Plasserer logoen over andre elementer */
 }
 
 @keyframes fadeOut {
   to {
-    opacity: 0;
-    transform: translateX(-50%) scale(5);
-    filter: blur(10px);
-    visibility: hidden;
+    opacity: 0; /* Gjør logoen usynlig */
+    transform: translateX(-50%) scale(5); /* Skalerer logoen opp 5 ganger og holder det sentrert */
+    filter: blur(10px); /* Legger til en 10px uskarphetseffekt */
+    visibility: hidden; /* Skjuler logoen fullstendig når animasjonen er ferdig */
   }
 }
 
 h1 {
   margin-bottom: 20px;
-  font-family: avenger, cursive;
-  font-size: 400%;
+  font-family: avenger, cursive; /* Bruker fonten "avenger", fallback til kursiv */
+  font-size: 400%; /* Gjør fonten 4 ganger større enn standard */
   top: 20px;
-  letter-spacing: 0.25rem;
-  color: #000;
-  -webkit-text-stroke: 0.01px #ED1D24;
+  letter-spacing: 0.25rem; /* Legger til litt avstand mellom bokstavene */
+  color: #000; /* Setter tekstfargen til svart */
+  -webkit-text-stroke: 0.01px #ED1D24; /* Gir en veldig tynn rød kant til teksten */
   position: relative;
-  text-align: center;
+  text-align: center; /* Sentrerer teksten horisontalt */
 }
 
 h2 {
-  font-size: 14px;
-  font-family: 'Courier New', Courier, monospace;
-  color: green;
-  padding: 5px;
+  font-size: 14px; /* Angir fontstørrelsen til 14px */
+  font-family: 'Courier New', Courier, monospace; /* Bruker monospace-skrifttype */
+  color: green; /* Setter tekstfargen til grønn */
+  padding: 5px; /* Legger til 5px med padding rundt teksten */
 }
 
 .hiddeninfo {
-  border: solid green 2px;
-  background-color: black;
-  width: 355px;
-  height: 320px;
-  position: absolute;
-  top: 100px;
-  z-index: -1; /* Ensure it's behind the image */
-  opacity: 1; /* Initially hidden */
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  border: solid green 2px; /* Grønn kantlinje rundt elementet */
+  background-color: black; /* Sort bakgrunn */
+  width: 355px; /* Setter bredden til 355px */
+  height: 320px; /* Høyden settes til 320px */
+  position: absolute; /* Plasserer elementet uavhengig av de andre elementene */
+  top: 100px; /* Plasserer det 100px fra toppen */
+  z-index: -1; /* Gjør det synlig bak andre elementer */
+  opacity: 1; /* Gjør det synlig */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth overgang for synlighet og posisjon */
 }
 
 .slide-container {
   position: relative;
-  margin: 10px;
-  padding: 10px;
-  border: solid #fff 3px;
-  width: 1024px;
-  height: 768px;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  margin: 10px; /* Legger til 10px med margin rundt */
+  padding: 10px; /* Legger til 10px med padding inne i containeren */
+  border: solid #fff 3px; /* Hvit kantlinje */
+  width: 1024px; /* Bredden settes til 1024px */
+  height: 768px; /* Høyden settes til 768px */
+  justify-content: center; /* Sentrerer innholdet horisontalt */
+  align-items: center; /* Sentrerer innholdet vertikalt */
+  overflow: hidden; /* Skjuler innhold utenfor beholderen */
 }
 
 .slider-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 170px;
-  padding: 0;
+  display: flex; /* Flexbox-layout for å plassere elementer inni */
+  align-items: center; /* Sentrerer elementene vertikalt */
+  justify-content: center; /* Sentrerer elementene horisontalt */
+  margin: 0 170px; /* Legger til margin på venstre og høyre side */
+  padding: 0; /* Ingen ekstra padding */
 }
 
 .img-slider {
   width: 100%;
-  height: 600px;
+  height: 600px; /* Høyden settes til 600px */
   position: relative;
-  display: flex;
-  top: -40px;
-  gap: 100px;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.7s ease-in-out;
-  z-index: 2;
+  display: flex; /* Flexbox for å arrangere bilder */
+  top: -40px; /* Flytter hele slideren litt opp */
+  gap: 100px; /* Legger til 100px mellom hvert bilde */
+  justify-content: center; /* Sentrerer bildene horisontalt */
+  align-items: center; /* Sentrerer bildene vertikalt */
+  transition: transform 0.7s ease-in-out; /* Smooth bevegelse for bildet */
+  z-index: 2; /* Plasserer slideren over andre elementer */
 }
 
 .button {
   position: absolute;
   width: 370px;
   height: 370px;
-  transition: .5s;
-  background-color: rgba(0, 0, 0, .4);
+  transition: .5s; /* Gjør endringer over 0.5 sekunder */
+  background-color: rgba(0, 0, 0, .4); /* Halvgjennomsiktig sort bakgrunn */
 }
 
 .button:hover {
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .2); /* Bakgrunnen blir litt lysere ved hover */
 }
 
-/* Specific styling for each image when it's targeted */
+/* Stiler for hvert bilde når det blir valgt (ved bruk av spans og targets) */
 #slider-span1:target ~ .img-slider #img1,
 #slider-span1:target ~ .img-slider #button-1,
 #slider-span2:target ~ .img-slider #img2,
@@ -156,12 +157,12 @@ h2 {
 #slider-span8:target ~ .img-slider #button-8,
 #slider-span9:target ~ .img-slider #img9,
 #slider-span9:target ~ .img-slider #button-9 {
-  width: 380px;
-  background-color: transparent;
-  filter: saturate(100%);
+  width: 380px; /* Øker bredden når det blir valgt */
+  background-color: transparent; /* Fjerner bakgrunnen */
+  filter: saturate(100%); /* Øker fargemetningen */
 }
 
-/* Correctly target hiddeninfo inside slider-div */
+/* Styrer "hiddeninfo" for hver slide når bildet blir valgt */
 #slider-span1:target ~ .img-slider #slide1 .hiddeninfo,
 #slider-span2:target ~ .img-slider #slide2 .hiddeninfo,
 #slider-span3:target ~ .img-slider #slide3 .hiddeninfo,
@@ -171,9 +172,9 @@ h2 {
 #slider-span7:target ~ .img-slider #slide7 .hiddeninfo,
 #slider-span8:target ~ .img-slider #slide8 .hiddeninfo,
 #slider-span9:target ~ .img-slider #slide9 .hiddeninfo {
-  opacity: 1;
-  animation: moveDown 1.4s forwards;
-  z-index: -1; /* Bring to front when active */
+  opacity: 1; /* Gjør informasjonen synlig */
+  animation: moveDown 1.4s forwards; /* Flytter informasjonen nedover */
+  z-index: -1;
 }
 
 /* Ensure non-targeted hiddeninfo stays hidden */
@@ -192,7 +193,7 @@ h2 {
   transform: translateY(0);
 }
 
-/* Ensure non-targeted hiddeninfo smoothly goes back */
+/* Sørger for at "hiddeninfo" går tilbake til sin opprinnelige posisjon på en smooth måte når den ikke er aktiv */
 #slider-span1:not(:target) ~ .img-slider #slide1 .hiddeninfo,
 #slider-span2:not(:target) ~ .img-slider #slide2 .hiddeninfo,
 #slider-span3:not(:target) ~ .img-slider #slide3 .hiddeninfo,
@@ -202,32 +203,33 @@ h2 {
 #slider-span7:not(:target) ~ .img-slider #slide7 .hiddeninfo,
 #slider-span8:not(:target) ~ .img-slider #slide8 .hiddeninfo,
 #slider-span9:not(:target) ~ .img-slider #slide9 .hiddeninfo {
-  animation: moveUpBack 1.4s forwards; /* Smoothly move back */
-  opacity: 0;
-  z-index: -1;
+  animation: moveUpBack 1.4s forwards; /* Setter i gang en animasjon for å flytte infoen opp igjen */
+  opacity: 0; /* Gjør den usynlig */
+  z-index: -1; /* Setter den bak andre elementer */
 }
 
 .img-slider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.7s ease-in-out;
-  transform: translateX(-40%);
-  animation: moveup 2s forwards;
+  display: flex; /* Lager en fleksibel beholder for bildene */
+  justify-content: center; /* Sentrerer innholdet horisontalt */
+  align-items: center; /* Sentrerer innholdet vertikalt */
+  transition: transform 0.7s ease-in-out; /* Gjør overgangen til transformasjoner jevn */
+  transform: translateX(-40%); /* Flytter innholdet litt til venstre som standard */
+  animation: moveup 2s forwards; /* Starter en animasjon for å bevege det opp */
 }
 .img {
-  height: 365px;
-  transition: 0.5s;
-  filter: saturate(10%);
-  border-radius: 16px;
+  height: 365px; /* Setter høyden på bildene */
+  transition: 0.5s; /* Gjør overgangen til effektene jevn */
+  filter: saturate(10%); /* Gjør bildene litt falmet i starten */
+  border-radius: 16px; /* Runde hjørner for en penere look */
 }
 
 .img:hover {
-  filter: saturate(100%);
-  transform: scale(1.0);
-  transition: top 2s;
+  filter: saturate(100%); /* Når musepekeren er over bildet, blir det fullt farget */
+  transform: scale(1.0); /* Ingen skala endres her, så det holder seg i samme størrelse */
+  transition: top 2s; /* Lar "top" posisjonen endres jevnt over 2 sekunder */
 }
 
+/* Håndterer hvordan slideren beveger seg når et spesifikt bilde er valgt */
 #slider-span1:target ~ .img-slider {
   transform: translateX(172%);
 }
@@ -264,7 +266,7 @@ h2 {
   transform: translateX(-172%);
 }
 
-/* Move the image up */
+/* Beveger opp bildet når det er valgt */
 #slider-span1:target ~ .img-slider #img1 {
   animation: moveUp 1s forwards;
 }
@@ -301,7 +303,7 @@ h2 {
   animation: moveUp 1s forwards;
 }
 
-
+/* Får skjulte info til å bevege seg ned når et bilde er valgt */
 #slider-span1:target ~ .hiddeninfo #img1 {
   animation: moveDown 1s forwards;
 }

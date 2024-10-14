@@ -1,95 +1,104 @@
-body{
-    background-color: #111111;
-    height: 100vh;
+body {
+    background-color: #111111; /* Mørk bakgrunn */
+    height: 100vh; /* Full høyde av vinduet */
 }
 
-.wrapper span{
-    position: fixed;
-    bottom: -180px;
-    height: 50px;
-    width: 50px;
-    border-radius: 20%;
-    z-index: -1;
-    background-color: #18191f;
-    box-shadow: 0 0 50px #d25500,
+.wrapper span {
+    position: fixed; /* Fikser posisjonen */
+    bottom: -180px; /* Starter under skjermen */
+    height: 50px; /* Høyde 50px */
+    width: 50px; /* Bredde 50px */
+    border-radius: 20%; /* Rundede kanter */
+    z-index: -1; /* Bak andre elementer */
+    background-color: #18191f; /* Mørk farge */
+    box-shadow: 0 0 50px #d25500, /* Oransje glød */
                 0 0 100px #d25500,
                 0 0 150px #d25500,
                 0 0 200px #d25500;
-    animation: animate 10s linear infinite;
+    animation: animate 10s linear infinite; /* Animasjon som gjentar seg */
 }
 
-
-.text{
-    background-color: #fff;
+.text {
+    background-color: #fff; /* Hvit bakgrunn for tekst */
 }
 
-.wrapper span:nth-child(1){
-    left: 60px;
-    animation-delay: 0.6s;
+/* Spesifikasjoner for hvert span-element */
+.wrapper span:nth-child(1) {
+    left: 60px; /* 60px fra venstre */
+    animation-delay: 0.6s; /* Forsinkelse 0.6s */
 }
 
-.wrapper span:nth-child(2){
-    left: 10%;
-    animation-delay: 3s;
-    width: 60px;
-    height: 60px;
-}
-.wrapper span:nth-child(3){
-    left: 20%;
-    animation-delay: 2s;   
-}
-.wrapper span:nth-child(4){
-    left: 30%;
-    animation-delay: 5s;  
-    width: 80px;
-    height: 80px; 
-}
-.wrapper span:nth-child(5){
-    left: 40%;
-    animation-delay: 1s;  
-}
-.wrapper span:nth-child(6){
-    left: 50%;
-    animation-delay: 7s;  
-}
-.wrapper span:nth-child(7){
-    left: 50%;
-    animation-delay: 6s;
-    width: 100px;
-    height: 100px;
-}
-.wrapper span:nth-child(8){
-    left: 70%;
-    animation-delay: 8s;
-}
-.wrapper span:nth-child(9){
-    left: 80%;
-    animation-delay: 6s;
-    width: 90px;
-    height: 90px;
-}
-.wrapper span:nth-child(10){
-    left: 90%;
-    animation-delay: 4s;
+.wrapper span:nth-child(2) {
+    left: 10%; /* 10% fra venstre */
+    animation-delay: 3s; /* Forsinkelse 3s */
+    width: 60px; /* Bredde 60px */
+    height: 60px; /* Høyde 60px */
 }
 
-.banner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.wrapper span:nth-child(3) {
+    left: 20%; /* 20% fra venstre */
+    animation-delay: 2s; /* Forsinkelse 2s */
 }
 
+.wrapper span:nth-child(4) {
+    left: 30%; /* 30% fra venstre */
+    animation-delay: 5s; /* Forsinkelse 5s */
+    width: 80px; /* Bredde 80px */
+    height: 80px; /* Høyde 80px */
+}
+
+.wrapper span:nth-child(5) {
+    left: 40%; /* 40% fra venstre */
+    animation-delay: 1s; /* Forsinkelse 1s */
+}
+
+.wrapper span:nth-child(6) {
+    left: 50%; /* Midt på skjermen */
+    animation-delay: 7s; /* Forsinkelse 7s */
+}
+
+.wrapper span:nth-child(7) {
+    left: 50%; /* Midt på skjermen */
+    animation-delay: 6s; /* Forsinkelse 6s */
+    width: 100px; /* Bredde 100px */
+    height: 100px; /* Høyde 100px */
+}
+
+.wrapper span:nth-child(8) {
+    left: 70%; /* 70% fra venstre */
+    animation-delay: 8s; /* Forsinkelse 8s */
+}
+
+.wrapper span:nth-child(9) {
+    left: 80%; /* 80% fra venstre */
+    animation-delay: 6s; /* Forsinkelse 6s */
+    width: 90px; /* Bredde 90px */
+    height: 90px; /* Høyde 90px */
+}
+
+.wrapper span:nth-child(10) {
+    left: 90%; /* 90% fra venstre */
+    animation-delay: 4s; /* Forsinkelse 4s */
+}
+
+.banner {
+    display: flex; /* Bruker fleksboks */
+    justify-content: center; /* Sentrerer horisontalt */
+    align-items: center; /* Sentrerer vertikalt */
+    height: 100vh; /* Full høyde av vinduet */
+}
+
+/* Animasjon for elementene */
 @keyframes animate {
     0% {
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateY(0); /* Starter på plass */
+        opacity: 1; /* Full synlighet */
     }
     80% {
-        opacity: .7;
+        opacity: .7; /* Litt gjennomsiktig */
     }
     100% {
-        transform: translateY(-800px) rotate(360deg);
-        opacity: 0;
+        transform: translateY(-800px) rotate(360deg); /* Beveger opp og roterer */
+        opacity: 0; /* Blir usynlig */
     }
 }
