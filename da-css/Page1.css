@@ -160,7 +160,6 @@ img {
     height: auto; /* Beholder forholdet mellom høyde og bredde */
     max-height: 200px; /* Setter en maks høyde for bildene */
     object-fit: cover; /* Bildet tilpasses så det fyller grid-cellen */
-    border: 0px solid rgb(95, 54, 54); /* Gir bildet en tynn rødlig kantlinje */
 }
 
 .button {
