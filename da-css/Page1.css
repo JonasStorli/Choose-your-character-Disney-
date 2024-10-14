@@ -1,261 +1,251 @@
 /*custom font*/
 @font-face {
-    font-family: avenger;
-    src: url(../fonts/AVENGER.ttf);
+    font-family: avenger; /* Eget navn på font */
+    src: url(../fonts/AVENGER.ttf); /* Lagring av font */
 }
 
 /*body flex med column*/
 body { 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    display: flex; /* Layout */
+    flex-direction: column; /* Organiserer innholdet */
+    justify-content: center; /* Sentraliserer innhold vertikalt */
+    align-items: center; /* Sentraliserer innhold horisontalt */
+    height: 100vh; /* Full høyde */
 }
 
 /*h1 sminker seg*/
 h1 {
-    margin-bottom: 20px;
-    font-family: avenger, cursive;
-    font-size: 300%;
-    letter-spacing: 0.25rem;
-    color: #000;
-    -webkit-text-stroke: 0.01px #ED1D24;
-    position: relative;
+    margin-bottom: 20px; /* Mellomrom mellom tittel og kontainer */
+    font-family: avenger, cursive; /* Bruker fonten vi la til */
+    font-size: 300%; /* Gjør teksten stor */
+    letter-spacing: 0.25rem; /* Øker avstanden mellom bokstavene litt */
+    color: #000; /* Setter tekstfargen til svart */
+    -webkit-text-stroke: 0.01px #ED1D24; /* Gir en tynn rød kantlinje rundt bokstavene */
+    position: relative; /* Gjør det mulig å plassere elementer i forhold til dette elementet */
 }
 /*h1 skal fylles opp med rød med font er litt rar*/
 h1::before{
-    margin-bottom: 20px;
-    content: "Marvel Characters";
-    font-family: avenger, cursive;
-    top: 0;
-    left: 0;
-    letter-spacing: 0.25rem;
-    overflow: hidden; 
-    width: 0;
-    height: 100%;
-    color: #ED1D24;
-    position: absolute;
-    transition: width 1s ease-in-out;
-    white-space: nowrap; /* Prevents text wrapping */
-    z-index: 0;
+    margin-bottom: 20px; /* Lager samme mellomrom under før-hover tekst */
+    content: "Marvel Characters"; /* Teksten som skal vises når vi hover */
+    font-family: avenger, cursive; /* Bruker samme font som hovedteksten */
+    top: 0; /* Starter fra toppen */
+    left: 0; /* Starter fra venstre kant */
+    letter-spacing: 0.25rem; /* Samme avstand mellom bokstavene */
+    overflow: hidden; /* Skjuler alt innhold som ikke er innenfor breddegrensen */
+    width: 0; /* Starter med null bredde (usynlig) */
+    height: 100%; /* Tar opp hele høyden av h1 */
+    color: #ED1D24; /* Setter teksten til rød */
+    position: absolute; /* Plasserer denne i forhold til h1 */
+    transition: width 1s ease-in-out; /* Animert overgang for bredden ved hover */
+    white-space: nowrap; /* Forhindrer at teksten brytes til flere linjer */
+    z-index: 0; /* Legger dette lagret under hovedteksten */
 }
 
 h1:hover::before{
-    width: 100%;
-    filter: drop-shadow(0 0 25px #ED1D24);
+    width: 100%; /* Utvider bredden så den dekker hele teksten når du hover */
+    filter: drop-shadow(0 0 25px #ED1D24); /* Glød rundt */
 
 }
 
 /*anker text*/
 a {
-    color: #fff;
-    font-family: avenger, cursive;
-    font-size: 300%;
-    letter-spacing: 0.25rem;
-    font-size: 300%;
+    color: #fff; /* Gjør lenken hvit */
+    font-family: avenger, cursive; /* Bruk samme font for konsistens */
+    font-size: 300%; /* Gjør lenken stor */
+    letter-spacing: 0.25rem; /* Gir samme avstand mellom bokstaver */
     top: 50%;
     left: 50%;
 }
 /*ironman animasjon*/
 #ironman{
-    width: 100px;
-    position: absolute;
-    animation: moveleft 6s forwards;
+    width: 100px; /* Setter bredden til 100px */
+    position: absolute; /* Absolutt posisjon for animasjon */
+    animation: moveleft 6s forwards; /* Animerer flyttingen av bildet fra høyre til venstre */
 }
 
-@keyframes moveleft{
+@keyframes moveleft {
     from {
-        transform:translateY(10px) translateX(1500px);
+        transform: translateY(10px) translateX(1500px); /* Starter utenfor skjermen til høyre */
     }
     to {
-        transform:translateY(-300px) translateX(-1500px);
+        transform: translateY(-300px) translateX(-1500px); /* Flytter bildet til venstre og opp */
     }
 }
 
 /*hulk animasjon*/
 #minihulk {
-    width: 100px;
+    width: 100px; /* Hulk-bildet er også 100px bredt */
     position: absolute;
-    top: 87%;
-    left: 100%;
-    transform: translateY(-50%);
-    animation: moveAlongPath 10s ease-in;
+    top: 87%; /* Plasserer bildet lavt på skjermen */
+    left: 100%; /* Starter helt til høyre */
+    transform: translateY(-50%); /* Sentraliserer vertikalt */
+    animation: moveAlongPath 10s ease-in; /* Animerer Hulken langs en bane */
 }
 
 @keyframes moveAlongPath {
     from {
-      transform: translate(0, 0);
+        transform: translate(0, 0); /* Starter på utgangspunktet */
     }
     25% {
-      transform: translate(-1500px, 0px); /* Move to the right and up */
+        transform: translate(-1500px, 0px); /* Flytter Hulk til venstre */
     }
     50% {
-      transform: translate(-1300px, -300px); /* Continue right and curve down */
+        transform: translate(-1300px, -300px); /* Litt oppover etter en tid */
     }
     75% {
-      transform: translate(-1500px, -500px); /* Continue right and curve back up */
+        transform: translate(-1500px, -500px); /* Mer oppover */
     }
     to {
-      transform: translate(-1700px, -500px); /* End at far right */
+        transform: translate(-1700px, -500px); /* Sluttpunktet hvor Hulk ender */
     }
   }
-/*spiderman animasjon*/
-#hangingspider {
-    width: 100px;
-    position: absolute;
-    top: 0.4%;
-    left: 90%;
-    transition: transform 1s ease-in-out; /* Smooth transition both ways */
+  
+  #hangingspider {
+    width: 100px; /* Spider-Man bildet er også 100px bredt */
+    position: absolute; /* Posisjonerer bildet absolutt */
+    top: 0.4%; /* Plasserer det nesten helt på toppen */
+    left: 90%; /* Setter bildet nær høyre kant */
+    transition: transform 1s ease-in-out; /* Glatt overgang når du hover */
 }
 /*spiderman liker ikke nærkontakt*/
 #hangingspider:hover {
-    transform: translateY(-150px); /* Moves up */
+    transform: translateY(-150px); /* Flytter Spider-Man opp når du hover */
 }
 
-/*container er ikke vampyr*/
 .container {
-    background-color: #000;
-    position: relative; /* Set position to relative for absolute positioning of button */
-    border: 10px solid rgb(0, 0, 0); /* Border around the container */
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
-    width: 1024px;
-    height: 768px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: filter 0.3s ease-in-out;  
+    background-color: #000; /* Gjør bakgrunnen svart */
+    position: relative; /* For at absolutt posisjonerte elementer skal fungere innenfor containeren */
+    border: 10px solid rgb(0, 0, 0); /* Gir containeren en tykk svart kant */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6); /* Legger til en skygge rundt containeren */
+    width: 1024px; /* Bredden på containeren */
+    height: 768px; /* Høyden på containeren */
+    display: flex; /* Bruker flexbox for å justere innholdet */
+    justify-content: center; /* Sentraliserer innholdet horisontalt */
+    align-items: center; /* Sentraliserer innholdet vertikalt */
+    transition: filter 0.3s ease-in-out; /* Glatt overgang for filtereffekter */  
 }
 
 /*bilder er i en 3x3 posisjon*/
 .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(3, 1fr); 
-    width: 100%;
-    height: 100%;
-    gap: 5px; 
-    padding: 10px; 
-}
-
-.grid-img {
-    transition: filter 0.3s ease-in-out;
+    display: grid; /* Bruker grid-layout */
+    grid-template-columns: repeat(3, 1fr); /* Lager tre kolonner med lik bredde */
+    grid-template-rows: repeat(3, 1fr); /* Lager tre rader med lik høyde */
+    width: 100%; /* Fyller hele bredden av containeren */
+    height: 100%; /* Fyller hele høyden av containeren */
+    gap: 5px; /* Gir litt plass mellom hvert element i grid-en */
+    padding: 10px; /* Litt ekstra plass rundt hele grid-en */
 }
 /*vet ikke kofor vi har to men det fungerer*/
 .grid-img{
-    transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out;
+    transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out; /* Glatt overgang */
 }
 
 /*litt hover effekt på bildene*/
 .grid-img:hover {
-    transform: scale(1.1); 
-    filter: brightness(1.2); 
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); /* Zoomer inn bildet når du hover */
+    filter: brightness(1.2); /* Øker lysstyrken på bildet */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Legger til en svak skygge rundt bildet */
     
 }
 
 /*alle bildene bilr midre og blured utenom hover*/
 .grid-img:hover ~ .grid-img:not(:hover),
 .grid-img:not(:hover) {
-    transform: scale(0.94); 
-    filter: blur(2px); 
-    transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out;
+    transform: scale(0.94); /* Krymper bildene du ikke hover over */
+    filter: blur(2px); /* Gjør de andre bildene uskarpe */
+    transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out; /* Glatt overgang for de andre bildene */
 }
-
-/*bildeene kan ikke bli støre en 200px*/
 img {
-    width: 100%; 
-    height: auto;
-    max-height: 200px; 
-    object-fit: cover; 
-    border:0 rgb(95, 54, 54);
+    width: 100%; /* Bildet fyller hele bredden på grid-cellen */
+    height: auto; /* Beholder forholdet mellom høyde og bredde */
+    max-height: 200px; /* Setter en maks høyde for bildene */
+    object-fit: cover; /* Bildet tilpasses så det fyller grid-cellen */
+    border: 0px solid rgb(95, 54, 54); /* Gir bildet en tynn rødlig kantlinje */
 }
 
-/* fin knapp med diverse rgb lightning integrert */
 .button {
-    padding: 15px 40px;
-    border: none;
-    outline: none;
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    border-radius: 12px;
-    display: flex;
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    background-color: #4CAF50; 
-    color: white; 
-    padding: 20px 65px; 
-    font-size: 20px; 
-    text-align: center; 
-    text-decoration: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-    border-radius: 100px;
-    background: #00007E;
-    background: -webkit-linear-gradient(to right, #00007E,#0000A5,#0000DF);
-    background: linear-gradient(to right, #00007E,#0000A5,#0000DF);
-    color: #fff;
-    transition: all 0.3s ease;
+    padding: 15px 40px; /* Gir litt ekstra plass rundt teksten inni knappen */
+    border: none; /* Ingen kantlinje rundt knappen */
+    outline: none; /* Fjerner standard kantlinje ved fokus */
+    color: #fff; /* Hvit tekst */
+    cursor: pointer; /* Viser "hånd" når man holder musen over knappen */
+    position: relative; /* Relativ posisjonering for å plassere hover-effektene */
+    z-index: 1; /* Sørger for at knappen ligger over hover-effektene */
+    border-radius: 12px; /* Gjør hjørnene litt runde */
+    display: flex; /* Fleksibel layout, men brukes ikke mye her */
+    position: absolute; /* Posisjonerer knappen absolutt inne i en container */
+    top: 50%; /* Plasserer knappen halvveis ned på skjermen/containeren */
+    left: 50%; /* Plasserer knappen midt på skjermen/containeren */
+    transform: translateX(-50%); /* Justerer knappen for å bli perfekt sentrert horisontalt */
+    background-color: #4CAF50; /* Grønn bakgrunn (men overskrives senere) */
+    color: white; /* Hvit tekstfarge */
+    padding: 20px 65px; /* Ekstra plass for å gjøre knappen stor nok til å klikkes lett */
+    font-size: 20px; /* Tekststørrelsen inne i knappen */
+    text-align: center; /* Sentrerer teksten inni knappen */
+    text-decoration: none; /* Fjerner eventuell understreking hvis det er en lenke */
+    border-radius: 5px; /* Runder hjørnene på knappen */
+    cursor: pointer; /* Viser en "hånd" når man holder musen over knappen */
+    transition: background-color 0.3s ease; /* Glatt overgang når bakgrunnsfargen endrer seg */
+    border-radius: 100px; /* Mer dramatisk runde hjørner */
+    background: #00007E; /* Setter en mørkeblå farge */
+    background: -webkit-linear-gradient(to right, #00007E,#0000A5,#0000DF); /* Gradient-effekt for eldre nettlesere */
+    background: linear-gradient(to right, #00007E,#0000A5,#0000DF); /* En gradient fra blå til mørkere blå */
+    color: #fff; /* Hvit tekst */
+    transition: all 0.3s ease; /* Glatt overgang for flere effekter (skalering, fargeendring osv.) */
 }
 
-.button:hover{
-    transform: translateX(-50%) scale(1.3);
+.button:hover {
+    transform: translateX(-50%) scale(1.3); /* Når du hover over knappen, blir den større og forblir sentrert */
 }
 
 .button::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #333;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+    content: ""; /* Dette er et usynlig pseudo-element som brukes til en bakgrunnseffekt */
+    z-index: -1; /* Legger denne bak selve knappen */
+    position: absolute; /* Posisjonerer det absolutt under knappen */
+    width: 100%; /* Gir pseudo-elementet samme bredde som knappen */
+    height: 100%; /* Gir pseudo-elementet samme høyde som knappen */
+    background-color: #333; /* Mørk bakgrunn for pseudo-elementet */
+    left: 0; /* Starter fra venstre kant */
+    top: 0; /* Starter fra toppen */
+    border-radius: 10px; /* Gjør hjørnene litt runde */
 }
 
-/*hover color */
 .button::before {
-    content: "";
+    content: ""; /* Dette pseudo-elementet lager en glødende kantlinje rundt knappen */
     background: linear-gradient(
         45deg,
-        #FF0000, #FF7300, #FFFB00, #48FF00,
-        #00FFD5, #002BFF, #FF00C8, #FF0000
+        #FF0000, #FF7300, #FFFB00, #48FF00, /* Farger som skaper regnbueeffekten */
+        #00FFD5, #002BFF, #FF00C8, #FF0000 /* Fortsetter med flere farger */
     );
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    background-size: 600%;
-    z-index: -1;
-    width: calc(108% + 4px);
-    height: calc(120% + 4px);
-    filter: blur(4px);
-    animation: glowing 20s linear infinite;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-    opacity: 0;
+    position: absolute; /* Posisjonerer gløden rundt knappen */
+    top: -8px; /* Flytter det litt over knappen */
+    left: -8px; /* Flytter det litt til venstre for knappen */
+    background-size: 600%; /* Gjør bakgrunnens gradient mye større for animasjonseffekt */
+    z-index: -1; /* Legger gløden under knappen */
+    width: calc(108% + 4px); /* Litt større enn selve knappen for å få glød-effekten til å strekke seg utover */
+    height: calc(120% + 4px); /* Litt høyere enn knappen */
+    filter: blur(4px); /* Gjør gløden litt uskarp */
+    animation: glowing 20s linear infinite; /* Gjør at gradienten beveger seg konstant */
+    transition: opacity .3s ease-in-out; /* Glatt overgang for hvor synlig gløden er */
+    border-radius: 10px; /* Gir gløden runde hjørner */
+    opacity: 0; /* Starter med gløden usynlig */
 }
 
 @keyframes glowing {
-    0% {background-position: 0 0;}
-    50% {background-position: 400% 0;}
-    100% {background-position: 0 0;}
+    0% {background-position: 0 0;} /* Starter gløden fra venstre */
+    50% {background-position: 400% 0;} /* Flytter gradienten langt til høyre midtveis */
+    100% {background-position: 0 0;} /* Flytter tilbake til startposisjonen */
 }
 
 .button:hover::before {
-    opacity: 1;
+    opacity: 1; /* Når du hover over knappen, blir gløden synlig */
 }
 
 .button:active:after {
-    background: transparent;
+    background: transparent; /* Når knappen klikkes, blir bakgrunnen til pseudo-elementet usynlig */
 }
 
 .button:active {
-    color: #000;
-    font-weight: bold;
+    color: #000; /* Skifter tekstfarge til svart ved klikk */
+    font-weight: bold; /* Gjør teksten fetere når knappen er trykket inn */
 }
