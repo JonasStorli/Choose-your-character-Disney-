@@ -1,0 +1,35 @@
+Tabell for gruppens kodestandarder 
+I tabellen under legger dere inn retningslinjer for hvordan alle i gruppen skal kode! Dette gjelder både retningslinjer dere lager før dere begynner å kode, og alle retningslinjer som dere oppdager underveis i kodingen! 
+Retningslinjekategori 
+Retningslinjer (lister med retningslinjer)
+
+
+Navngivning i kode (klasser og id) 
+• Klassenavn og id-er skal være beskrivende og relatere til innholdet (f.eks. .grid-img, #ironman). 
+• Klassenavn skrives med bindestrek (f.eks. .grid-img), og id-er med camelCase (f.eks. #slider-span1). 
+• Unngå bruk av generelle navn som ikke beskriver formålet (f.eks. unngå #container1, bruk heller #slide-container).
+
+
+Ryddighet og struktur 
+• Inndentering = 4 mellomrom for alle innrykk. 
+• CSS-filer skal være modulære, og koble til spesifikke sider (Page1.css for Page1.html osv.). 
+• Fargesetting utføres med hexadecimal (f.eks. #000000 for svart, #ED1D24 for rød), som vist i animasjoner og tekst. 
+• Bruk flexbox og grid til layout, som i .container (flex) og .grid (grid) for bilder i Page1.html.
+
+Semantikk 
+• Bruk semantiske HTML-elementer der det er mulig (f.eks. bruk <div> for generelle containere, men <audio> for lydinnhold). 
+• Alle bilder skal ha passende alt-tekster, som alt="Black Panther" for å beskrive bildene. 
+• Responsiv design er implementert med <meta name="viewport" content="width=device-width, initial-scale=1.0"> og height: 100vh i CSS.
+
+
+Kommentering 
+• Kommentarer skal brukes både i HTML (f.eks. <!-- Animasjon av Ironman -->) og i CSS (f.eks. /* hulk animasjon */) for å forklare koden. 
+• Kommentarer skrives på norsk for klarhet. 
+• Kompleks CSS som animasjoner skal ha beskrivende kommentarer for bedre forståelse
+
+
+Annet 
+• Alle designendringer, inkludert animasjoner og farger, planlegges og diskuteres på forhånd. 
+• Store strukturelle endringer i kode gjøres i samråd med gruppen. 
+• All koding, spesielt kompleks animasjon som @keyframes, gjøres i samarbeid for å sikre konsistens og kvalitet.
+
